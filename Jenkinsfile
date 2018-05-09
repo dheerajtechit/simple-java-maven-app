@@ -1,29 +1,59 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
+    agent any
     stages {
-        stage('Build') {
+        stage('Preview') {
+            input {
+                message "Continue?"
+            }
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                echo "Preview"
             }
         }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
+        stage('Testing') {
+            failFast true
+            parallel {
+                stage('QA') {
+                    input {
+                        id 'testing-qa'
+                        message "Continue?"
+                    }
+                    steps {
+                        echo "Testing: QA"
+                    }
+                }
+                stage('Acceptance') {
+                    input {
+                        id 'testing-acceptance'
+                        message "Continue?"
+                    }
+                    steps {
+                        echo "Testing: Acceptance"
+                    }
                 }
             }
         }
-        stage('Deliver') {
+        stage('Compliance') {
+            input {
+                message "Continue?"
+            }
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                echo "Compliance"
+            }
+        }
+        stage('Staging') {
+            input {
+                message "Continue?"
+            }
+            steps {
+                echo "Staging"
+            }
+        }
+        stage('Release') {
+            input {
+                message "Continue?"
+            }
+            steps {
+                echo "Release"
             }
         }
     }
