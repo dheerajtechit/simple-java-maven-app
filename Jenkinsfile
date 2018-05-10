@@ -19,6 +19,15 @@
 	        echo Commit_User_Email
 		
 		cleanWs notFailBuild: true
+
+		if(env.CHANGE_ID) {
+			echo "Going To Build"
+  // do something because it's a pull request
+} else {
+  // not a pull request
+			
+	echo "Not builing, Its just a peer review"
+}
 }
     }
 
