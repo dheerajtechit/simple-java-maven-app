@@ -23,6 +23,6 @@
     }
 
     stage ('Barb - Build Stage') {
- //       input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
+       input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
         
     }
