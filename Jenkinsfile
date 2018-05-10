@@ -17,6 +17,8 @@
 	        
 	        Commit_User_Email = sh(returnStdout: true, script: "git --no-pager show -s --pretty=format:'%ae'").trim()
 	        echo Commit_User_Email
+		
+		cleanWs notFailBuild: true
 }
     }
 
@@ -25,5 +27,5 @@
         
     }
 
-cleanWs notFailBuild: true
+
 }
