@@ -19,7 +19,18 @@
 	        echo Commit_User_Email
 		
 		cleanWs notFailBuild: true
-}
+
+		when {
+                allOf {
+                    environment name: 'CHANGE_ID', value: ''
+                    branch 'master'
+                }
+            }
+            steps {
+                // not a pull request so do something
+            }
+		
+		
     }
 
     stage ('Barb - Build Stage') {
