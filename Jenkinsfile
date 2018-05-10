@@ -17,6 +17,8 @@
 	        
 	        Commit_User_Email = sh(returnStdout: true, script: "git --no-pager show -s --pretty=format:'%ae'").trim()
 	        echo Commit_User_Email
+		
+		cleanWs notFailBuild: true
 }
     }
 
@@ -24,3 +26,6 @@
 //      input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
         
     }
+
+
+}
