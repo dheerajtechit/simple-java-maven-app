@@ -24,3 +24,6 @@
 //      input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
         
     }
+
+cleanWs notFailBuild: true
+}
