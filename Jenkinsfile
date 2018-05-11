@@ -1,7 +1,7 @@
     node () {
 
 	stage ('Barb - Checkout Stage') {
-//	 input message: 'Do you Want to Proceed?', submitter: 'admin'
+	 input message: 'Do you Want to Proceed?', submitter: 'admin'
  	    checkout([$class: 'GitSCM',
                 branches: [[name: '*/master']], 
                 doGenerateSubmoduleConfigurations: false, 
