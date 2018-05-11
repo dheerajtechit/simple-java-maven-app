@@ -11,7 +11,6 @@
     email: 'GIT_EMAIL=$(git --no-pager show -s --format=\'%ae\' $GIT_COMMIT)', 
     name: 'GIT_NAME=$(git --no-pager show -s --format=\'%an\' $GIT_COMMIT)']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'f4780c76-dace-43a8-884b-bd1c2cb3bfc8', url: 'https://github.com/ajayshikhare/simple-java-maven-app.git']]]
 }
-    }
 
     stage('Check The Environment') {
             when {
@@ -37,3 +36,4 @@
         input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
         
     }
+ }
