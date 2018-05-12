@@ -15,8 +15,8 @@
   stage('Decide') {
         if (env.BRANCH_NAME != 'master') {
             echo 'This build is only meant for Mster Branch'
-            sh 'exit 0'
-	    echo 'Exiting this Build with Exit 0'
+            sh 'exit 1'
+	    echo 'This Job should not be run Manually'
 		
         } else {
             echo 'Building the Master Branch'
