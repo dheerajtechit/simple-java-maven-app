@@ -14,15 +14,15 @@
 		
 //		[[$class: 'BooleanParameterValue', name: 'BUILD_SNAPSHOT', value: 'Boolean.valueOf(BUILD_SNAPSHOT)']]
 //		withEnv([ "BRANCH_NAME=${env.BRANCH_NAME}", "CHANGE_TARGET=${env.CHANGE_TARGET}"])
-}
+//}
 	    
 	    stage('Branch_Check') {
 //	echo "Builing the ${env.changeRequest}"// One or more steps need to be included within the steps block.
-		    if (CHANGE_TARGET()) {
-			    echo 'This is a pull request'
+		    if (CHANGE_TARGET()) { echo 'This is a pull request' }
 //		    input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
-		    } else {
-			    echo 'This is NOT a pull request'
-}
+		    else 
+		    { echo 'This is NOT a pull request' }
+			    
 
     }
+	}
