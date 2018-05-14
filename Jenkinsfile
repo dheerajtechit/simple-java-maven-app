@@ -14,7 +14,7 @@
 		
 //		[[$class: 'BooleanParameterValue', name: 'BUILD_SNAPSHOT', value: 'Boolean.valueOf(BUILD_SNAPSHOT)']]
 //		withEnv([ "BRANCH_NAME=${env.BRANCH_NAME}", "CHANGE_TARGET=${env.CHANGE_TARGET}"])
-}
+//}
 	    
 	    stage('Branch_Check') {
 //	echo "Builing the ${env.changeRequest}"// One or more steps need to be included within the steps block.
