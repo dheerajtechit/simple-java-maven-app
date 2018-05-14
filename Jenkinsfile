@@ -24,6 +24,13 @@
         }
     }
 
+
+if (env.CHANGE_ID) {
+   // pull request
+	echo 'This is a Pull Request'
+}
+
+
   //  stage ('Barb - Build Stage') {
   //      input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
         //   }
