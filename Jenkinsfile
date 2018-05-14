@@ -27,7 +27,7 @@
         //   }
 
 	    stage('Branch_Check') {
-	echo "Builing the ${env.CHANGE_TARGET}" // One or more steps need to be included within the steps block.
+	echo "Builing the PR ${env.CHANGE_TARGET}" // One or more steps need to be included within the steps block.
 		    if (env.CHANGE_TARGET()) { 
 		        echo 'This is a pull request' 
 		    } else {
