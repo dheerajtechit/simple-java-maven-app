@@ -13,22 +13,21 @@
 }
 
   stage('Sanity Check') {
-        if (env.BRANCH_NAME != 'master') && (env.CI_PULL_REQUEST != true) {
-            echo 'This build should only be run for the Master Branch and Build can only be run with Pull Request!.'
-	    sh 'exit 1'
-        } 
-	  //if {
-  //          echo 'Building the Master Branch'
+        	if (env.BRANCH_NAME != 'master' && env.CI_PULL_REQUEST != true) {
+            	echo 'This build should only be run for the Master Branch and Build can only be run with Pull Request!.'
+	    	sh 'exit 1'
+//	  if {
+//            echo 'Building the Master Branch'
 //	     echo ' Checking if its a Pull Request.'
 //	    if (env.CI_PULL_REQUEST == true)
 //	     echo 'Building this Pull Request $GIT_COMMIT from $GIT_NAME'
 		
 	} else {
-		echo 'This is not a Pull Request Build, Please do not directly commit in master branch, Use Pull Request instead.'
+            	echo 'This is not a Pull Request Build, Please do not directly commit in master branch, Use Pull Request instead.'
 		sh 'exit 1'
-	}
-	  
+        }
     }
+		
 
     stage ('Barb - Build Stage') {
         input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
