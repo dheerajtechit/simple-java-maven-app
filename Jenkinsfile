@@ -16,9 +16,11 @@
   stage('Decide') {
         if (env.BRANCH_NAME != 'master') {
             echo 'This build is only meant for Master Branch'
+		echo " The PR is ${env.CHANGE_TARGET}"
             sh 'exit 1'
         } else {
             echo 'Building the Master Branch'
+		echo " The PR is ${env.CHANGE_TARGET}"
         }
     }
 
@@ -26,12 +28,12 @@
   //      input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
         //   }
 
-	    stage('Branch_Check') {
-	echo "Builing the PR ${env.CHANGE_TARGET}" // One or more steps need to be included within the steps block.
-		    if (env.CHANGE_TARGET()) { 
-		        echo 'This is a pull request' 
-		    } else {
+//	    stage('Branch_Check') {
+//	echo "Builing the PR ${env.CHANGE_TARGET}" // One or more steps need to be included within the steps block.
+//		    if (env.CHANGE_TARGET()) { 
+//		        echo 'This is a pull request' 
+//		    } else {
 //		    input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
-                	echo 'This is NOT a pull request' 
-		    }
-	    }
+ //               	echo 'This is NOT a pull request' 
+//		    }
+//	    }
