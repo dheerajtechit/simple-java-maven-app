@@ -13,15 +13,12 @@
 }
 	    
 	    stage('Branch_Check') {
-	  echo "Builing the ${env.changeRequest}"// One or more steps need to be included within the steps block.
+//	echo "Builing the ${env.changeRequest}"// One or more steps need to be included within the steps block.
+	input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
+		    
   when {
     changeRequest()
   }
 }
 
-
-    stage ('Barb - Build Stage') {
-        input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
-        
-    }
     }
