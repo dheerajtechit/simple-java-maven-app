@@ -13,10 +13,7 @@
 }
 	    
 	    stage('Branch_Check') {
-  steps {
 	  echo "Builing the ${env.changeRequest}"// One or more steps need to be included within the steps block.
-  }
-
   when {
     changeRequest()
   }
