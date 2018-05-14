@@ -14,7 +14,7 @@
 
   stage('Sanity Check') {
 	  echo "branch is env.BRANCH_NAME or ${env.BRANCH_NAME} or ${BRANCH_NAME}"
-	  echo "If its a Pull Request ${env.CI_PULL_REQUEST} or {CI_PULL_REQUEST} or ${env.CHANGE_ID}"
+	  echo "If its a Pull Request ${env.CI_PULL_REQUEST} or {CI_PULL_REQUEST} or ${env.CHANGE_ID} or ${CHANGE_ID}"
         	if (env.BRANCH_NAME == 'master' && env.CHANGE_ID == 'true') {
 //            	echo 'This build should only be run for the Master Branch and Build can only be run with Pull Request!.'
 //	  if {
