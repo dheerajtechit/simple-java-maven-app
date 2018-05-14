@@ -1,4 +1,4 @@
-    node () {
+   node () {
 
 	stage ('Barb - Checkout Stage') {
 //	 input message: 'Do you Want to Proceed?', submitter: 'admin'
@@ -22,12 +22,12 @@
         }
     }
 
-    stage ('Barb - Build Stage') {
-        input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
-        
-    }
+  //  stage ('Barb - Build Stage') {
+  //      input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
+        //   }
+
 	    stage('Branch_Check') {
-	echo "Builing the ${env.CHANGE_TARGET}" // One or more steps need to be included within the steps block.
+	echo "Builing the PR ${env.CHANGE_TARGET}" // One or more steps need to be included within the steps block.
 		    if (env.CHANGE_TARGET()) { 
 		        echo 'This is a pull request' 
 		    } else {
