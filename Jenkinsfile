@@ -10,15 +10,19 @@
     [$class: 'UserIdentity', 
     email: 'GIT_EMAIL=$(git --no-pager show -s --format=\'%ae\' $GIT_COMMIT)', 
     name: 'GIT_NAME=$(git --no-pager show -s --format=\'%an\' $GIT_COMMIT)']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'f4780c76-dace-43a8-884b-bd1c2cb3bfc8', url: 'https://github.com/ajayshikhare/simple-java-maven-app.git']]]	
+    
+		
+//		[[$class: 'BooleanParameterValue', name: 'BUILD_SNAPSHOT', value: 'Boolean.valueOf(BUILD_SNAPSHOT)']]
+//		withEnv([ "BRANCH_NAME=${env.BRANCH_NAME}", "CHANGE_TARGET=${env.CHANGE_TARGET}"])
 }
 	    
 	    stage('Branch_Check') {
 //	echo "Builing the ${env.changeRequest}"// One or more steps need to be included within the steps block.
-	input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
-		    
-  when {
-    changeRequest()
-  }
+		    if (CHANGE_TARGET()) {
+			    echo 'This is a pull request'
+//		    input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
+		    } else {
+			    echo 'This is NOT a pull request'
 }
 
     }
