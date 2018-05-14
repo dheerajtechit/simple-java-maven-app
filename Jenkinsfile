@@ -12,12 +12,10 @@
     name: 'GIT_NAME=$(git --no-pager show -s --format=\'%an\' $GIT_COMMIT)']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'f4780c76-dace-43a8-884b-bd1c2cb3bfc8', url: 'https://github.com/ajayshikhare/simple-java-maven-app.git']]]
 }
 
-  stage('Decide') {
+  stage('Sanity Check') {
         if (env.BRANCH_NAME != 'master') {
-            echo 'This build is only meant for Mster Branch'
-            sh 'exit 1'
-	    echo 'This Job should not be run Manually'
-		
+            echo 'This build should only be run for the Master Branch and Manually running of this job is not permitted!.'
+	    sh 'exit 1'
         } else {
             echo 'Building the Master Branch'
         }
