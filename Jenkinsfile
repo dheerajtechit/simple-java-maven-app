@@ -17,16 +17,16 @@
         if (env.BRANCH_NAME != 'master') {
             echo 'This build is only meant for Master Branch'
 		echo " The PR is ${env.CHANGE_TARGET} or env.CHANGE_ID  or ${env.CHANGE_ID}"
-		sh 'echo $CHANGE_ID'
-		sh "echo \$CHANGE_ID"
-		sh "echo ${env.CHANGE_ID}"
+		echo '$CHANGE_ID'
+		echo "${CHANGE_ID}"
+		echo "${env.CHANGE_ID}"
             sh 'exit 1'
         } else {
             echo 'Building the Master Branch'
 		echo " The PR is NOT ${env.CHANGE_TARGET} or env.CHANGE_ID  or ${env.CHANGE_ID}"
-		sh 'echo $CHANGE_ID'
-		sh "echo \$CHANGE_ID"
-		sh "echo ${env.CHANGE_ID}"
+		echo '$CHANGE_ID'
+		echo "${CHANGE_ID}"
+		echo "${env.CHANGE_ID}"
         }
     }
 
