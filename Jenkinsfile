@@ -23,9 +23,6 @@
         } else {
             echo 'Building the Master Branch'
 		echo " The PR is NOT ${env.CHANGE_TARGET} or env.CHANGE_ID  or ${env.CHANGE_ID}"
-		echo '$CHANGE_ID'
-		echo "${CHANGE_ID}"
-		echo "${env.CHANGE_ID}"
         }
     }
 
