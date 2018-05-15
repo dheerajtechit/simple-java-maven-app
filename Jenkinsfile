@@ -13,7 +13,6 @@
     userRemoteConfigs: [[credentialsId: 'f4780c76-dace-43a8-884b-bd1c2cb3bfc8', 
     url: 'https://github.com/ajayshikhare/simple-java-maven-app.git']]]
 }
-    }
 
   stage('Decide') {
         if (env.BRANCH_NAME != 'master') {
@@ -39,4 +38,4 @@
 //		    input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
  //               	echo 'This is NOT a pull request' 
 //		    }
-//	    }
+	    }
