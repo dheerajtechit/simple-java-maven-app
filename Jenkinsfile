@@ -1,7 +1,7 @@
    node () {
 
 	stage ('Barb - Checkout Stage') {
-	 input message: 'Do you Want to Proceed?', submitter: 'admin'
+//	 input message: 'Do you Want to Proceed?', submitter: 'admin'
     checkout poll: false, 
     scm: [$class: 'GitSCM', 
     branches: [[name: '*/master']], 
@@ -29,7 +29,7 @@
     }
 
     stage ('Barb - Build Stage') {
-//       input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
+       input message: 'Do you Want to Proceed to Compiling the code?', submitter: 'admin'
            }
 
 //	    stage('Branch_Check') {
