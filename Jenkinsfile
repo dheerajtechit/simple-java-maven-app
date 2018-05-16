@@ -22,7 +22,7 @@
         } else {
             echo 'Building the Master Branch'
 		echo " The PR is NOT ${env.CHANGE_TARGET} or env.CHANGE_ID  or ${env.CHANGE_ID}"
-		echo 'Added Pull Request Builder'
+		echo 'Trying MultiBranch Pluigin'
 		sh 'env | sort'
 		sh 'printenv'
         }
